@@ -42,4 +42,3 @@ async def on_message_delete(message):
     channel = client.get_channel(CHANNEL_ID)
     await channel.send(f"{message.author.name}の削除メッセージ```{message.content}```")
     
-client.run(token)

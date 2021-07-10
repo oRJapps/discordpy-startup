@@ -38,7 +38,7 @@ async def on_message_delete(message):
     if message.author.bot:
         return
 
-    CHANNEL_ID = 8862362251399004190
+    CHANNEL_ID = 862362251399004190
     channel = client.get_channel(CHANNEL_ID)
     await channel.send(f"{message.author.name}の削除メッセージ```{message.content}```")
 

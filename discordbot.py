@@ -1,5 +1,6 @@
 import discord
 from discord import message
+from discord import Embed
 
 import os
 import traceback

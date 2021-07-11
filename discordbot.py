@@ -14,7 +14,7 @@ async def on_voice_state_update(member, before, after):
     # チャンネルへの入室ステータスが変更されたとき（ミュートON、OFFに反応しないように分岐）
     if before.channel != after.channel:
         # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
-        botRoom = client.get_channel(863009355115528192)
+        botRoom = client.get_channel(863011085246529576)
 
         # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
         #announceChannelIds = client.channel.name
@@ -46,7 +46,7 @@ async def on_message_delete(message):
     if message.author.bot:
         return
 
-    CHANNEL_ID = 863266385965744180
+    CHANNEL_ID = 862362251399004190
     channel = client.get_channel(CHANNEL_ID)
     await channel.send(f"{message.author.name}の削除メッセージ```{message.content}```")
 

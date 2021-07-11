@@ -27,13 +27,16 @@ async def on_voice_state_update(member, before, after):
                  await botRoom.send(embed=embed)
                  Invite = await after.channel.create_invite()
                  await botRoom.send(Invite.url)
-             elif after.channel.id == 856777019530412103:
+             else:
                 embed=discord.Embed(title="[VC:"+after.channel.name+"]" + "誰かが参加しました！",description="Not一般ボイスチャンネル",color=discord.Colour.pink())
                 embed.add_field(name="⚠注意",value="トーク内容にエロ・グロ系が含まれる可能性があるので、参加は中学生以降自己責任です")
                 await botRoom.send(embed=embed)
 
         elif after.channel is None:
+            if before.channel.id != 856777019530412103:
              await botRoom.send("```**" + before.channel.name + "** から、__" + member.name + "__  が抜けました！```")
+            else:
+                return
         #if before.channel is not None and before.channel.id in announceChannelIds:
         #    await botRoom.send("**" + before.channel.name + "** から、__" + member.name + "__  が抜けました！")
 

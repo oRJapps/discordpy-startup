@@ -23,13 +23,15 @@ async def on_voice_state_update(member, before, after):
         if before.channel is None:
              #await botRoom.send("**" + after.channel.name + "```** に、__" + member.name + "__  が参加しました！```")
              if after.channel.id != 856777019530412103:
-                 embed=discord.Embed(title="[VC:"+after.channel.name+"]" + member.name +"が参加しました！",description="一般ボイスチャンネル",color=discord.Colour.green())
-                 await botRoom.send(embed=embed)
+                 embed=discord.Embed(title=member.name +"が参加しました！",description="参加チャンネル：["+after.channel.name+"]",color=discord.Colour.green())
                  Invite = await after.channel.create_invite()
-                 await botRoom.send(Invite.url)
+                 embed.add_field(name="招待URL",value=Invite.url)
+                 await botRoom.send(embed=embed)
+
              else:
-                embed=discord.Embed(title="[VC:"+after.channel.name+"]" + "誰かが参加しました！",description="Not一般ボイスチャンネル",color=discord.Colour.red())
+                embed=discord.Embed(title="誰かが参加しました！",description="参加チャンネル：["+after.channel.name+"]",color=discord.Colour.red())
                 embed.add_field(name="⚠注意",value="トーク内容にエロ・グロ系が含まれる可能性があるので、参加は中学生以降自己責任です")
+                embed.add_field(name="詳細",value="https://discord.com/channels/739793985471643649/743409631195562037/863580034430533633")
                 await botRoom.send(embed=embed)
 
         elif after.channel is None:

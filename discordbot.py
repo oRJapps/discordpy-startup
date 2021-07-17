@@ -77,4 +77,4 @@ async def on_message_delete(message):
     await channel.send(f"{message.author.name}の削除メッセージ```{message.content}```")
 
 # Botのトークンを指定（デベロッパーサイトで確認可能）
-client.run(token)
+bot.run(token)

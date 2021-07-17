@@ -11,25 +11,25 @@ token = os.environ['DISCORD_BOT_TOKEN']
 bot = commands.Bot(command_prefix = "!")
 
 #チャンネル作成と削除
-@bot.command()
-async def lobby(ctx, arg):
-    LobbyName = arg
+#@bot.command()
+#async def lobby(ctx, arg):
+#    LobbyName = arg
 
-    Guild = ctx.guild
+#    Guild = ctx.guild
     # カテゴリを作成する
-    Category = await Guild.create_category(LobbyName)
-    await Category.create_text_channel("テキストチャンネル")
-    await Category.create_voice_channel("ボイスチャンネル")
+#    Category = await Guild.create_category(LobbyName)
+#    await Category.create_text_channel("テキストチャンネル")
+#    await Category.create_voice_channel("ボイスチャンネル")
     #print(LobbyName)
 
-@bot.command()
-async def delch(ctx, arg):
-    delname = arg
-    #print(delname)
-    Guild = ctx.guild
-    ch=discord.utils.get(Guild.categories, name=delname)
-    channel=bot.get_channel(ch.id)
-    await channel.delete()
+#@bot.command()
+#async def delch(ctx, arg):
+#    delname = arg
+#    #print(delname)
+#    Guild = ctx.guild
+#    ch=discord.utils.get(Guild.categories, name=delname)
+#    channel=bot.get_channel(ch.id)
+#    await channel.delete()
 
 # チャンネル入退室時の通知処理
 @bot.event

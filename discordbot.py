@@ -18,11 +18,11 @@ async def on_voice_state_update(member, before, after):
         if before.channel is None:
              #await botRoom.send("**" + after.channel.name + "```** に、__" + member.name + "__  が参加しました！```")
              if after.channel.id != 856777019530412103:
-                 embed=discord.Embed(title=member.name +"が参加しました！",description="参加チャンネル：["+after.channel.name+"]",color=discord.Colour.green())
+                 #embed=discord.Embed(title=member.name +"が参加しました！",description="参加チャンネル：["+after.channel.name+"]",color=discord.Colour.green())
                  Invite = await after.channel.create_invite()
                  #embed.add_field(name="招待URL",value=Invite.url)
-                 embed.set_thumbnail(url=member.avatar_url)
-                 await botRoom.send(embed=embed)
+                 #embed.set_thumbnail(url=member.avatar_url)
+                 #await botRoom.send(embed=embed)
 
              else:
                 embed=discord.Embed(title="誰かが参加しました！",description="参加チャンネル：["+after.channel.name+"]",color=discord.Colour.red())
